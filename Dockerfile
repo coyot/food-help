@@ -2,7 +2,7 @@ FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
-COPY FoodHelp.sln .
+COPY *.sln .
 COPY FoodHelp/*.csproj ./FoodHelp/
 RUN dotnet restore
 
