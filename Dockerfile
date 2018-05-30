@@ -1,4 +1,11 @@
 FROM microsoft/dotnet:2.1-sdk AS build
+
+#install Node.js
+RUN apt-get install --yes curl
+RUN curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
+RUN apt-get install --yes nodejs
+RUN apt-get install --yes build-essential
+
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
